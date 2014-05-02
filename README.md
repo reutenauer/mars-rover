@@ -11,5 +11,6 @@ of carriage returns when typing on the standard input.
 
 TODO: full coverage
 
-Copyright (c) Arthur Reutenauer, MIT/X11 licence, 30 April - 2 May 2014.<br />
+Copyright (c) Arthur Reutenauer, 30 April - 2 May 2014.<br />
+This code is placed under the terms of the [MIT licence](http://opensource.org/licenses/MIT).<br />
 BachoTeX, Kujawsko-Pomorskie Voivodeship, Poland.
