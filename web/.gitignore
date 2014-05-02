@@ -14,6 +14,3 @@
 # Ignore all logfiles and tempfiles.
 /web/log/*.log
 /web/tmp
-
-# Top-level Gemfile.lock, not part of the Rails app
-/Gemfile.lock
