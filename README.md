@@ -2,7 +2,7 @@ The Mars robot interface.
 
 Main code in directory src, tests in spec.  I’m making this into a Rails
 application that is not yet ready to deploy; please ignore all the other files
-and directory for the moment.
+and directories for the moment.
 
 Written in fairly standard Ruby (tested with 2.1); it should be enough to run
 `bundle` in the top-level directory, then `rspec` to run the tests.
