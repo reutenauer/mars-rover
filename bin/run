@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+# Without arguments, read the standard input.  Otherwise just load every file
+# in a row.
+
+# On my Linux box, the Enter key sends a carriage return character (ASCII 0xD)
+# instead of linefeed (ASCII 0xA) as expected; I can work around this by typing
+# Control-J which is a common input key for the ASCII linefeed.  AR, 2014-05-02.
+
+$LOAD_PATH << File.expand_path('../../src', __FILE__)
+require 'mars_rover'
+include Mars
+
+lines = ""
+if ARGV.count == 0
+  while line = gets do
+    lines += line
+  end
+else
+  ARGV.each do |filename|
+    lines += File.read(filename)
+  end
+end
+
+rovers = RoverGroup.new
+puts rovers.walk(lines)
