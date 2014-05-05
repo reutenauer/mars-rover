@@ -4,8 +4,9 @@ Main code in directory src, tests in spec.  I’m making this into a Rails
 application that is not yet ready to deploy; please ignore all the other files
 and directories for the moment.
 
-Written in fairly standard Ruby (tested with 2.1); it should be enough to run
-`bundle` in the top-level directory, then `rspec` to run the tests.
+Written in fairly standard Ruby (tested with 2.0.0 and 2.1.1); it should be
+enough to run `bundle` in the top-level directory, then `rspec` to run the
+tests.
 
 Standalone executable in bin/run; can read the instruction either from file(s)
 specified as argument(s) to the script, or from the standard input; but beware
