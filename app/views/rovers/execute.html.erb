@@ -1,6 +1,6 @@
 <div id="main">
   <%= render 'form' %>
-  <% @rover.locations.split("\n").each do |line| %>
+  <% @rover.locations.each_line do |line| %>
     <%= line %><br />
   <% end %>
 </div>
