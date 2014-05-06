@@ -1,0 +1,5 @@
+<%= form_for :rover, url: rovers_path do |f| %>
+  Instructions:<br >
+  <%= f.text_area :instructions %><br />
+  <%= f.submit "Start" %>
+<% end %>
