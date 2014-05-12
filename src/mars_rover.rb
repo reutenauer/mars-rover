@@ -145,20 +145,25 @@ module Mars
         start = lines.pop.split
         program = lines.pop
         raise TooManyInstructions if start.length > MAXLINE || program.length > MAXLINE
-        x = Integer(start[0])
-        y = Integer(start[1])
+        begin
+          x = Integer(start[0])
+          y = Integer(start[1])
+        rescue ArgumentError
+          raise BadFormat.new("problem with line: “#{start.join(' ')}”")
+        end
         pos = Point.new(x, y)
         dir = Orientation.new(start[2].strip)
         program.each_char do |letter|
           case letter
-          when 'L'
+          when 'L' || 'l'
             dir.rotate!
-          when 'R'
+          when 'R' || 'r'
             dir.rotate!(-1)
-          when 'F'
+          when 'F' || 'f'
             next if grid.cursed?(pos, dir)
             pos.translate!(dir.to_vector)
             if grid.lost?(pos)
+              # Get last position by backtracking from current pos
               lastpos = pos.translate(dir.to_vector.reverse)
               grid.set_scent(lastpos, dir)
               locations += "#{lastpos.x} #{lastpos.y} #{dir.to_s} LOST\n"
@@ -178,5 +183,8 @@ module Mars
   end
 
   class TooManyInstructions < Exception
+  end
+
+  class BadFormat < Exception
   end
 end
