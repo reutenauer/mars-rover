@@ -39,3 +39,6 @@ gem 'spring',        group: :development
 # Use debugger
 gem 'debugger', group: [:development, :test]
 gem 'rspec', group: [:development, :test]
+
+# For the asset pipeline on Heroku, see https://devcenter.heroku.com/articles/rails-4-asset-pipeline#serve-assets
+gem 'rails_12factor', group: :production
